@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  <g font-family="Inter, sans-serif" fill="#f4f2ec">
+    <text x="60" y="180" font-size="220" font-weight="900" letter-spacing="-10">02</text>
+    <text x="60" y="540" font-size="28" font-weight="500" letter-spacing="4" fill="#ff3b1f">UI / UX</text>
+  </g>
+  <rect x="420" y="120" width="320" height="360" rx="20" fill="#f4f2ec"/>
+  <rect x="450" y="160" width="260" height="30" rx="4" fill="#0a0a0a"/>
+  <rect x="450" y="210" width="200" height="14" rx="2" fill="#6b6b6b"/>
+  <rect x="450" y="240" width="220" height="14" rx="2" fill="#6b6b6b"/>
+  <rect x="450" y="290" width="120" height="40" rx="8" fill="#ff3b1f"/>
+  <rect x="450" y="350" width="260" height="80" rx="8" fill="#e8e5dd"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="600" fill="#f4f2ec"/>
+  <g font-family="Inter, sans-serif">
+    <text x="60" y="180" font-size="220" font-weight="900" fill="#0a0a0a" letter-spacing="-10">03</text>
+    <text x="60" y="540" font-size="28" font-weight="700" fill="#0a0a0a" letter-spacing="4">GRAPHIC</text>
+  </g>
+  <circle cx="600" cy="300" r="140" fill="#ff3b1f"/>
+  <rect x="540" y="140" width="140" height="140" fill="#0a0a0a"/>
+  <line x1="0" y1="500" x2="800" y2="500" stroke="#0a0a0a" stroke-width="2"/>
+</svg>

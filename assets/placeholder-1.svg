@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="600" fill="#ff3b1f"/>
+  <g fill="#0a0a0a" font-family="Inter, sans-serif" font-weight="900">
+    <text x="60" y="180" font-size="220" letter-spacing="-10">01</text>
+    <text x="60" y="540" font-size="28" font-weight="500" fill="#f4f2ec" letter-spacing="4">MOTION</text>
+  </g>
+  <rect x="540" y="60" width="200" height="200" fill="#0a0a0a"/>
+  <circle cx="640" cy="160" r="60" fill="#ff3b1f"/>
+</svg>

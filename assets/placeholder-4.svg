@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b6b6b"/>
+      <stop offset="100%" stop-color="#f4f2ec"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="600" cy="180" r="80" fill="#ff3b1f"/>
+  <g font-family="Inter, sans-serif" fill="#0a0a0a">
+    <text x="60" y="180" font-size="220" font-weight="900" letter-spacing="-10">04</text>
+    <text x="60" y="540" font-size="28" font-weight="700" letter-spacing="4" fill="#f4f2ec">PHOTO</text>
+  </g>
+  <g stroke="#0a0a0a" stroke-width="1" fill="none" opacity="0.4">
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="440" x2="800" y2="440"/>
+    <line x1="0" y1="480" x2="800" y2="480"/>
+  </g>
+</svg>

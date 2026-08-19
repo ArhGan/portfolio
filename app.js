@@ -249,4 +249,53 @@
       closeAllFlyouts();
     });
   });
+  // --- Contact: Copy WeChat to clipboard with toast ---
+  const copyBtn = document.querySelector('.contact-copy-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const text = copyBtn.dataset.copy || copyBtn.textContent.trim();
+      const toast = copyBtn.querySelector('.copy-toast');
+
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+
+        if (toast) {
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 1600);
+        }
+      } catch (err) {
+        console.warn('Copy failed:', err);
+      }
+    });
+  }
+
+  // --- Contact: QR tooltip fallback for touch devices ---
+  document.querySelectorAll('.contact-link-tooltip').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const qr = link.dataset.qr;
+      if (qr === 'tel') {
+        e.preventDefault();
+        window.location.href = 'tel:+8613800000000';
+      } else if (qr === 'wechat') {
+        // Copy WeChat on click too
+        const text = 'An-Thor';
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).catch(() => {});
+        }
+      }
+      // Other links can keep their default href behavior
+    });
+  });
 })();

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article Detail — Zephyr Arh</title>
+  <link rel="stylesheet" href="project-detail.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="article-detail.css" />
+  <link rel="preconnect" href="https://fonts.loli.net" crossorigin />
+  <link href="https://fonts.loli.net/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-logo">
+        <span class="logo-mark">Z</span>
+      </div>
+
+      <nav class="nav-icons">
+        <!-- Home -->
+        <div class="nav-item has-panel" data-nav="home">
+          <a href="index.html#home" class="nav-icon" data-section="home" title="Home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </a>
+        </div>
+
+        <!-- Portfolio / Works -->
+        <div class="nav-item has-panel" data-nav="portfolio">
+          <a href="index.html#portfolio" class="nav-icon" data-section="portfolio" title="Portfolio">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </a>
+          <div class="flyout-panel" data-panel="portfolio">
+            <div class="flyout-label">Categories</div>
+            <div class="flyout-list">
+              <div class="cat-group">
+                <button class="cat-item" data-filter="all">
+                  <span class="cat-name">All</span>
+                  <span class="cat-count">6</span>
+                </button>
+              </div>
+              <div class="cat-group" data-cat="motion">
+                <button class="cat-item" data-filter="motion">
+                  <span class="cat-name">Motion</span>
+                  <span class="cat-count">2</span>
+                </button>
+                <div class="cat-children">
+                  <a href="project-detail.html?id=1" class="cat-sub">Project Title 01</a>
+                  <a href="project-detail.html?id=6" class="cat-sub">Project Title 06</a>
+                </div>
+              </div>
+              <div class="cat-group" data-cat="ui">
+                <button class="cat-item" data-filter="ui">
+                  <span class="cat-name">UI/UX</span>
+                  <span class="cat-count">1</span>
+                </button>
+                <div class="cat-children">
+                  <a href="project-detail.html?id=2" class="cat-sub">Project Title 02</a>
+                </div>
+              </div>
+              <div class="cat-group" data-cat="graphic">
+                <button class="cat-item" data-filter="graphic">
+                  <span class="cat-name">Graphic</span>
+                  <span class="cat-count">1</span>
+                </button>
+                <div class="cat-children">
+                  <a href="project-detail.html?id=3" class="cat-sub">Project Title 03</a>
+                </div>
+              </div>
+              <div class="cat-group" data-cat="photo">
+                <button class="cat-item" data-filter="photo">
+                  <span class="cat-name">Photo</span>
+                  <span class="cat-count">1</span>
+                </button>
+                <div class="cat-children">
+                  <a href="project-detail.html?id=4" class="cat-sub">Project Title 04</a>
+                </div>
+              </div>
+              <div class="cat-group" data-cat="dev">
+                <button class="cat-item" data-filter="dev">
+                  <span class="cat-name">Dev</span>
+                  <span class="cat-count">1</span>
+                </button>
+                <div class="cat-children">
+                  <a href="project-detail.html?id=5" class="cat-sub">Project Title 05</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Articles (active) -->
+        <div class="nav-item has-panel" data-nav="articles">
+          <a href="index.html#articles" class="nav-icon active" data-section="articles" title="Articles">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </a>
+          <div class="flyout-panel" data-panel="articles">
+            <div class="flyout-label">Articles</div>
+            <div class="flyout-list">
+              <a href="article-detail.html?id=1" class="flyout-item">
+                <span class="flyout-date">2025.06.12</span>
+                <span class="flyout-title">On the Craft of Motion Design</span>
+                <span class="flyout-tag">Design</span>
+              </a>
+              <a href="article-detail.html?id=2" class="flyout-item">
+                <span class="flyout-date">2025.04.03</span>
+                <span class="flyout-title">Building a Portfolio with React</span>
+                <span class="flyout-tag">Dev</span>
+              </a>
+              <a href="article-detail.html?id=3" class="flyout-item">
+                <span class="flyout-date">2025.02.18</span>
+                <span class="flyout-title">International Typographic Style</span>
+                <span class="flyout-tag">Theory</span>
+              </a>
+              <a href="article-detail.html?id=4" class="flyout-item">
+                <span class="flyout-date">2024.11.05</span>
+                <span class="flyout-title">A Year of Vibe Coding</span>
+                <span class="flyout-tag">Dev</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline / Experience -->
+        <div class="nav-item has-panel" data-nav="timeline">
+          <a href="index.html#timeline" class="nav-icon" data-section="timeline" title="Timeline">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </a>
+          <div class="flyout-panel" data-panel="timeline">
+            <div class="flyout-label">Experience</div>
+            <div class="flyout-list">
+              <a href="index.html#timeline" class="flyout-item">
+                <span class="flyout-date">2025</span>
+                <span class="flyout-title">Creative Developer — Freelance</span>
+              </a>
+              <a href="index.html#timeline" class="flyout-item">
+                <span class="flyout-date">2023</span>
+                <span class="flyout-title">UI/UX Designer — Studio X</span>
+              </a>
+              <a href="index.html#timeline" class="flyout-item">
+                <span class="flyout-date">2022</span>
+                <span class="flyout-title">Motion Media Intern — Agency Y</span>
+              </a>
+              <a href="index.html#timeline" class="flyout-item">
+                <span class="flyout-date">2021</span>
+                <span class="flyout-title">Started Creating</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="nav-item has-panel" data-nav="contact">
+          <a href="index.html#contact" class="nav-icon" data-section="contact" title="Contact">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <div class="flyout-panel" data-panel="contact">
+            <div class="flyout-label">Contact</div>
+            <div class="flyout-list">
+              <a href="mailto:hello@yourname.com" class="flyout-item">
+                <span class="flyout-idx">01</span>
+                <span class="flyout-title">hello@yourname.com</span>
+              </a>
+              <a href="#" class="flyout-item">
+                <span class="flyout-idx">02</span>
+                <span class="flyout-title">GitHub</span>
+              </a>
+              <a href="#" class="flyout-item">
+                <span class="flyout-idx">03</span>
+                <span class="flyout-title">Dribbble</span>
+              </a>
+              <a href="#" class="flyout-item">
+                <span class="flyout-idx">04</span>
+                <span class="flyout-title">Behance</span>
+              </a>
+              <a href="#" class="flyout-item">
+                <span class="flyout-idx">05</span>
+                <span class="flyout-title">LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+      <span class="works-count">Articles</span>
+    </div>
+  </aside>
+
+  <!-- Flyout panel backdrop (mobile) -->
+  <div class="flyout-overlay" id="flyoutOverlay" aria-hidden="true"></div>
+
+  <!-- Mobile Top Bar -->
+  <header class="mobile-topbar">
+    <a href="index.html#articles" class="mobile-logo">Z</a>
+    <div class="mobile-top-actions">
+      <a href="index.html#articles" class="mobile-action-btn" aria-label="Back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </a>
+      <button class="mobile-action-btn" id="mobileMenuBtn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottomnav" aria-label="Mobile navigation">
+    <a href="index.html#home" class="mb-item" data-mb="home">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <span class="mb-label">Home</span>
+    </a>
+    <a href="index.html#portfolio" class="mb-item" data-mb="portfolio">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+      <span class="mb-label">Work</span>
+    </a>
+    <a href="index.html#articles" class="mb-item active" data-mb="articles">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      <span class="mb-label">Blog</span>
+    </a>
+    <a href="index.html#timeline" class="mb-item" data-mb="timeline">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <span class="mb-label">About</span>
+    </a>
+    <a href="index.html#contact" class="mb-item" data-mb="contact">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <span class="mb-label">Contact</span>
+    </a>
+  </nav>
+
+  <!-- Article Detail Main -->
+  <main class="detail-main article-detail-main">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html#articles">Articles</a>
+      <span class="sep">/</span>
+      <span class="current" id="crumbTitle">Article Title</span>
+    </nav>
+
+    <div class="detail-layout article-layout">
+      <!-- Left: Article Content -->
+      <div class="detail-content article-content">
+        <div class="article-header">
+          <span class="detail-cat" id="articleCat">DESIGN</span>
+          <h1 class="detail-title" id="articleTitle">Article Title</h1>
+          <div class="article-meta-row">
+            <span class="article-date" id="articleDate">2025.06.12</span>
+            <span class="article-dot">·</span>
+            <span class="article-reading" id="articleReading">5 min read</span>
+          </div>
+        </div>
+
+        <!-- Article Body -->
+        <div class="article-body" id="articleBody">
+          <!-- Hero Image -->
+          <figure class="article-figure article-hero-image">
+            <img id="articleHeroImg" src="assets/placeholder-1.svg" alt="Article hero" />
+            <figcaption id="articleHeroCaption">Cover image caption</figcaption>
+          </figure>
+
+          <!-- Content sections will be injected by JS -->
+          <div id="articleContent"></div>
+        </div>
+
+        <!-- Next Article -->
+        <div class="next-project">
+          <a href="#" id="nextLink">
+            <span class="next-label">Next Article</span>
+            <span class="next-title" id="nextTitle">Next Article Title →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Info Panel -->
+      <aside class="detail-sidebar article-sidebar">
+        <div class="info-block">
+          <span class="info-label-block">Category</span>
+          <p class="info-note" id="infoCat">Design</p>
+        </div>
+        <div class="info-block">
+          <span class="info-label-block">Date</span>
+          <p class="info-note" id="infoDate">2025.06.12</p>
+        </div>
+        <div class="info-block">
+          <span class="info-label-block">Reading</span>
+          <p class="info-note" id="infoReading">5 min</p>
+        </div>
+        <div class="info-block">
+          <span class="info-label-block">Tags</span>
+          <div class="info-tags" id="infoTags">Design, Motion</div>
+        </div>
+        <div class="info-block">
+          <span class="info-label-block">Share</span>
+          <div class="share-links">
+            <a href="#" class="share-link" data-share="twitter">Twitter</a>
+            <a href="#" class="share-link" data-share="linkedin">LinkedIn</a>
+            <a href="#" class="share-link" data-share="copy">Copy Link</a>
+          </div>
+        </div>
+        <div class="detail-dates">
+          <span id="articleYear">2025</span>
+          <span class="copyright">© 2025 ZEPHYR</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="article-detail.js"></script>
+</body>
+</html>

@@ -830,6 +830,8 @@ button {
   cursor: pointer;
   transition: background 0.2s, padding 0.3s;
   position: relative;
+  text-decoration: none;
+  color: inherit;
 }
 
 .article-item::before {
@@ -852,6 +854,7 @@ button {
 .article-item:hover {
   padding-left: 16px;
   padding-right: 16px;
+  text-decoration: none;
 }
 
 .article-item:hover .article-title,

@@ -1,7 +1,10 @@
-# OS generated files
+# OS files
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Source PDF
+*.pdf
 
 # Editor / IDE
 .vscode/

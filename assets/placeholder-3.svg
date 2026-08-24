@@ -2,9 +2,14 @@
   <rect width="800" height="600" fill="#f4f2ec"/>
   <g font-family="Inter, sans-serif">
     <text x="60" y="180" font-size="220" font-weight="900" fill="#0a0a0a" letter-spacing="-10">03</text>
-    <text x="60" y="540" font-size="28" font-weight="700" fill="#0a0a0a" letter-spacing="4">GRAPHIC</text>
+    <text x="60" y="540" font-size="24" font-weight="700" fill="#0a0a0a" letter-spacing="4">POSTERS</text>
   </g>
-  <circle cx="600" cy="300" r="140" fill="#ff3b1f"/>
-  <rect x="540" y="140" width="140" height="140" fill="#0a0a0a"/>
+  <rect x="480" y="80" width="240" height="320" rx="8" fill="#0a0a0a"/>
+  <rect x="500" y="100" width="200" height="80" fill="#ff3b1f"/>
+  <rect x="500" y="200" width="200" height="6" fill="#6b6b6b"/>
+  <rect x="500" y="216" width="140" height="6" fill="#6b6b6b"/>
+  <rect x="500" y="240" width="80" height="28" rx="4" fill="#f4f2ec"/>
+  <rect x="500" y="280" width="200" height="100" fill="#e8e5dd"/>
   <line x1="0" y1="500" x2="800" y2="500" stroke="#0a0a0a" stroke-width="2"/>
+  <circle cx="600" cy="470" r="30" fill="#ff3b1f"/>
 </svg>

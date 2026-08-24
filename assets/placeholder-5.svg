@@ -1,13 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-  <rect width="800" height="600" fill="#1a1a1a"/>
-  <g font-family="'Space Mono', monospace" fill="#00ff88">
-    <text x="60" y="120" font-size="16" letter-spacing="2">{ '{ developer: true' }</text>
-    <text x="60" y="180" font-size="16" letter-spacing="2" fill="#ff3b1f">{ 'const skills = [' }</text>
-    <text x="90" y="220" font-size="14" fill="#f4f2ec">  'React', 'TypeScript', 'Node', 'Design'</text>
-    <text x="60" y="260" font-size="16" letter-spacing="2" fill="#ff3b1f">{ '];' }</text>
-  </g>
+  <rect width="800" height="600" fill="#0a0a0a"/>
   <g font-family="Inter, sans-serif" fill="#f4f2ec">
-    <text x="60" y="420" font-size="180" font-weight="900" letter-spacing="-8">05</text>
-    <text x="60" y="540" font-size="28" font-weight="700" letter-spacing="4" fill="#f4f2ec">DEV</text>
+    <text x="60" y="180" font-size="220" font-weight="900" letter-spacing="-10">05</text>
+    <text x="60" y="540" font-size="24" font-weight="600" letter-spacing="4" fill="#ff3b1f">MERCHANDISE</text>
   </g>
+  <rect x="480" y="60" width="260" height="260" rx="16" fill="#f4f2ec"/>
+  <rect x="510" y="90" width="200" height="200" rx="8" fill="#ff3b1f"/>
+  <text x="610" y="200" font-size="28" font-weight="700" text-anchor="middle" fill="#f4f2ec" font-family="Inter, sans-serif">LOGO</text>
+  <rect x="480" y="350" width="120" height="120" rx="12" fill="#1a1a1a"/>
+  <rect x="620" y="350" width="120" height="120" rx="12" fill="#2a2a2a"/>
+  <circle cx="540" cy="410" r="24" fill="#ff3b1f"/>
+  <rect x="640" y="390" width="80" height="8" fill="#f4f2ec"/>
+  <rect x="640" y="410" width="60" height="6" fill="#6b6b6b"/>
+  <rect x="640" y="426" width="70" height="6" fill="#6b6b6b"/>
+  <rect x="640" y="446" width="40" height="20" rx="4" fill="#ff3b1f"/>
 </svg>

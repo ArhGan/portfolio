@@ -287,7 +287,7 @@
       const qr = link.dataset.qr;
       if (qr === 'tel') {
         e.preventDefault();
-        window.location.href = 'tel:+8613800000000';
+        window.location.href = 'tel:17722449034';
       } else if (qr === 'wechat') {
         // Copy WeChat on click too
         const text = 'An-Thor';

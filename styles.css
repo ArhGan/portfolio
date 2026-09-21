@@ -603,8 +603,17 @@ button {
 .explore-btn:hover {
   background: var(--fg);
   color: var(--bg);
-  transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 var(--accent);
+}
+
+/* === 04 Magnetic Button === */
+[data-magnetic] {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-magnetic] .btn-text {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================================================
@@ -733,6 +742,45 @@ button {
   overflow: hidden;
   background-color: #e8e5dd;
   border: 1px solid var(--line);
+  transform: translateZ(0);
+}
+
+/* === 03 Depth Card: 3D Tilt === */
+.card[data-tilt] {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.card[data-tilt] .card-image {
+  transform: translateZ(0);
+  transition: transform 0.1s ease;
+}
+
+.card[data-tilt] .card-body {
+  transform: translateZ(20px);
+  transition: transform 0.1s ease;
+}
+
+.card[data-tilt] .card-index {
+  transform: translateZ(30px);
+}
+
+.card[data-tilt] .card-overlay {
+  transform: translateZ(15px);
+}
+
+.card[data-tilt] .card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card[data-tilt]:hover .card-image::after {
+  opacity: 1;
 }
 
 .card-image img {
@@ -979,6 +1027,41 @@ button {
   max-width: 560px;
   margin: 0;
   padding-left: 4px;
+}
+
+/* === 06 Stagger Reveal: Timeline hover === */
+.timeline-item {
+  transition: padding 0.3s ease, background 0.3s ease;
+  border-radius: 4px;
+  padding-right: 12px;
+}
+
+.timeline-item:hover {
+  padding-left: 12px;
+  background: rgba(0,0,0,0.02);
+}
+
+.timeline-item .timeline-arrow {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+  align-self: center;
+  opacity: 0;
+}
+
+.timeline-item:hover .timeline-arrow {
+  transform: translateX(8px);
+  color: var(--fg);
+  opacity: 1;
+}
+
+.timeline-item .timeline-content h3 {
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content h3 {
+  transform: translateX(4px);
 }
 
 /* =========================================================

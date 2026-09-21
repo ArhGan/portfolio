@@ -279,7 +279,6 @@
         console.warn('Copy failed:', err);
       }
     });
-  }
 
   // --- Contact: QR tooltip fallback for touch devices ---
   document.querySelectorAll('.contact-link-tooltip').forEach((link) => {
@@ -297,5 +296,100 @@
       }
       // Other links can keep their default href behavior
     });
+  });
+  } // close if (copyBtn)
+
+  // === 02 Text Scramble: Hero display text ===
+  const scrambleChars = '!<>-_\\/[]{}—=+*^?#________';
+  function scrambleText(el, target, done) {
+    let iteration = 0;
+    const maxIter = target.length * 6;
+    function update() {
+      el.textContent = target.split('').map((char, i) => {
+        if (i < iteration / 6) return target[i];
+        return scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+      }).join('');
+      iteration++;
+      if (iteration >= maxIter) {
+        el.textContent = target;
+        if (done) done();
+      } else {
+        setTimeout(() => requestAnimationFrame(update), 30);
+      }
+    }
+    update();
+  }
+
+  const heroLines = document.querySelectorAll('.hero-bg .display-text .line');
+  if (heroLines.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const targets = ['ZEPHYR', 'ARH'];
+    heroLines.forEach((line, i) => {
+      const target = i === 1 ? line.textContent.trim() : targets[i];
+      const originalHTML = line.innerHTML;
+      const isEm = line.querySelector('em');
+      if (isEm) {
+        scrambleText(isEm, targets[i], () => {
+          isEm.textContent = targets[i];
+        });
+      } else {
+        scrambleText(line, targets[i], () => {
+          line.textContent = targets[i];
+        });
+      }
+    });
+  }
+
+  // === 03 Depth Card: 3D Tilt on Portfolio cards ===
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.card[data-tilt]').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rotX = ((y - cy) / cy) * -8;
+        const rotY = ((x - cx) / cx) * 8;
+        card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.01, 1.01, 1.01)`;
+        card.style.setProperty('--mx', (x / rect.width * 100) + '%');
+        card.style.setProperty('--my', (y / rect.height * 100) + '%');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      });
+    });
+  }
+
+  // === 04 Magnetic Button ===
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('[data-magnetic]').forEach((btn) => {
+      const wrap = btn.parentElement;
+      if (!wrap) return;
+      wrap.style.display = 'inline-block';
+      wrap.style.padding = '8px';
+
+      wrap.addEventListener('mousemove', (e) => {
+        const rect = wrap.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
+        const btnText = btn.querySelector('.btn-text');
+        if (btnText) btnText.style.transform = `translate(${x * 0.12}px, ${y * 0.18}px)`;
+      });
+      wrap.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
+        const btnText = btn.querySelector('.btn-text');
+        if (btnText) btnText.style.transform = 'translate(0, 0)';
+      });
+    });
+  }
+
+  // === 06 Stagger Reveal: Timeline arrows ===
+  document.querySelectorAll('.timeline-item').forEach((item) => {
+    const arrow = document.createElement('span');
+    arrow.className = 'timeline-arrow';
+    arrow.textContent = '→';
+    arrow.setAttribute('aria-hidden', 'true');
+    item.appendChild(arrow);
   });
 })();

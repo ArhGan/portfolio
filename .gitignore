@@ -27,3 +27,18 @@ build/
 # Environment
 .env
 .env.local
+
+# Working material (not part of the deployed site)
+_src/
+_dev/
+_shot_*.png
+tools/__pycache__/
+
+# Font source (subset into fonts/*.woff2 before commit)
+fonts/*.ttf
+
+# Local agent workspace
+.workbuddy/
+
+# Trae workspace
+.trae/

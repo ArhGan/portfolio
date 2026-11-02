@@ -135,14 +135,6 @@
     });
   });
 
-  // --- Article Click (placeholder) ---
-  document.querySelectorAll('.article-item').forEach((item) => {
-    item.addEventListener('click', () => {
-      const title = item.querySelector('.article-title')?.textContent || 'Article';
-      console.log('Open article:', title);
-    });
-  });
-
   // --- Timeline Items: stagger reveal ---
   const timelineItems = document.querySelectorAll('.timeline-item');
   timelineItems.forEach((item, i) => {
@@ -249,55 +241,54 @@
       closeAllFlyouts();
     });
   });
-  // --- Contact: Copy WeChat to clipboard with toast ---
-  const copyBtn = document.querySelector('.contact-copy-btn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async (e) => {
+  // --- Copy to clipboard: 任何带 data-copy 的元素 ---
+  const globalToast = document.createElement('div');
+  globalToast.className = 'copy-toast-global';
+  globalToast.setAttribute('role', 'status');
+  globalToast.setAttribute('aria-live', 'polite');
+  document.body.appendChild(globalToast);
+  let toastTimer = null;
+
+  const flashToast = (msg) => {
+    globalToast.textContent = msg;
+    globalToast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => globalToast.classList.remove('show'), 1800);
+  };
+
+  const copyText = async (text) => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  };
+
+  document.querySelectorAll('[data-copy]').forEach((el) => {
+    el.addEventListener('click', async (e) => {
       e.preventDefault();
-      const text = copyBtn.dataset.copy || copyBtn.textContent.trim();
-      const toast = copyBtn.querySelector('.copy-toast');
-
+      const text = el.dataset.copy;
       try {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(text);
+        await copyText(text);
+        const localToast = el.querySelector('.copy-toast');
+        if (localToast) {
+          localToast.classList.add('show');
+          setTimeout(() => localToast.classList.remove('show'), 1600);
         } else {
-          const ta = document.createElement('textarea');
-          ta.value = text;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-        }
-
-        if (toast) {
-          toast.classList.add('show');
-          setTimeout(() => toast.classList.remove('show'), 1600);
+          flashToast(`已复制 ${text}`);
         }
       } catch (err) {
-        console.warn('Copy failed:', err);
+        flashToast('复制失败，请手动选择');
       }
-    });
-
-  // --- Contact: QR tooltip fallback for touch devices ---
-  document.querySelectorAll('.contact-link-tooltip').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      const qr = link.dataset.qr;
-      if (qr === 'tel') {
-        e.preventDefault();
-        window.location.href = 'tel:17722449034';
-      } else if (qr === 'wechat') {
-        // Copy WeChat on click too
-        const text = 'An-Thor';
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(text).catch(() => {});
-        }
-      }
-      // Other links can keep their default href behavior
     });
   });
-  } // close if (copyBtn)
 
   // === 02 Text Scramble: Hero display text ===
   const scrambleChars = '!<>-_\\/[]{}—=+*^?#________';

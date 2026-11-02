@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面走丢了 — Zephyr Arh</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=5">
+  <style>
+    .nf-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px;
+      max-width: 900px;
+    }
+    .nf-code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .nf-title {
+      font-size: clamp(56px, 12vw, 148px);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+    .nf-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .nf-desc {
+      font-size: 15px;
+      color: var(--fg-soft);
+      max-width: 420px;
+      margin-bottom: 36px;
+    }
+    .nf-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nf-btn {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      padding: 14px 24px;
+      border: 1px solid var(--line-strong);
+      border-radius: 100px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nf-btn:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+    .nf-btn.primary {
+      background: var(--fg);
+      color: var(--bg);
+    }
+  </style>
+</head>
+<body>
+  <main class="nf-wrap">
+    <p class="nf-code">ERROR 404 / PAGE NOT FOUND</p>
+    <h1 class="nf-title">LOST<br><em>IN SPACE.</em></h1>
+    <p class="nf-desc">这个地址没有对应的页面。也许链接过期了，也许是我当年写完就忘了——总之，先回到作品集看看吧。</p>
+    <div class="nf-actions">
+      <a href="./" class="nf-btn primary">← 返回首页</a>
+      <a href="./#portfolio" class="nf-btn">看看作品</a>
+    </div>
+  </main>
+</body>
+</html>

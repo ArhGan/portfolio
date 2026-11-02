@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://arhgan.github.io/portfolio/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/project-detail.html?id=1</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/project-detail.html?id=2</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/project-detail.html?id=3</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/project-detail.html?id=4</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/project-detail.html?id=5</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/project-detail.html?id=6</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/article-detail.html?id=1</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/article-detail.html?id=2</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/article-detail.html?id=3</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://arhgan.github.io/portfolio/article-detail.html?id=4</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

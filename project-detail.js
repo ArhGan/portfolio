@@ -93,7 +93,17 @@ const projects = {
     tags: '品牌视觉, VI, 双语设计, 香港市场',
     note: '负责内容：宣传单页、外立面围挡、桌面产品贴、户外异形立牌、扫码点单桌贴、菜单设计（品牌故事菜单、时间限定类套餐菜单）。',
     date: '2025.09',
-    thumb: 'assets/placeholder-1.svg'
+    thumb: 'assets/work/p1/cover.webp',
+    gallery: [
+      'assets/work/p1/01.webp',
+      'assets/work/p1/02.webp',
+      'assets/work/p1/03.webp',
+      'assets/work/p1/04.webp',
+      'assets/work/p1/05.webp',
+      'assets/work/p1/06.webp',
+      'assets/work/p1/07.webp',
+      'assets/work/p1/08.webp'
+    ]
   },
   2: {
     title: '扑湘品牌视觉设计',
@@ -105,7 +115,16 @@ const projects = {
     tags: '品牌视觉, VI, 色彩体系, 辅助图形, 湖南风味',
     note: '负责内容：品牌标志设计、色彩体系构建、辅助图形开发、杯垫、名片、餐巾纸盒、打包盒、手提袋、发票、胶带等全套物料。',
     date: '2025',
-    thumb: 'assets/placeholder-2.svg'
+    thumb: 'assets/work/p2/cover.webp',
+    gallery: [
+      'assets/work/p2/01.webp',
+      'assets/work/p2/02.webp',
+      'assets/work/p2/03.webp',
+      'assets/work/p2/04.webp',
+      'assets/work/p2/05.webp',
+      'assets/work/p2/06.webp',
+      'assets/work/p2/07.webp'
+    ]
   },
   3: {
     title: '广州天河花城汇南区店开业',
@@ -117,7 +136,13 @@ const projects = {
     tags: '海报设计, 开业主视觉, 信息流, 品牌传播',
     note: '负责内容：开业主视觉、线下海报系列、线上信息流海报、门店装饰物料。',
     date: '2025',
-    thumb: 'assets/placeholder-3.svg'
+    thumb: 'assets/work/p3/cover.webp',
+    gallery: [
+      'assets/work/p3/01.webp',
+      'assets/work/p3/02.webp',
+      'assets/work/p3/03.webp',
+      'assets/work/p3/04.webp'
+    ]
   },
   4: {
     title: 'PALATABLE 展会活动视觉',
@@ -129,7 +154,12 @@ const projects = {
     tags: '展会视觉, 空间导视, 活动物料, 互动体验',
     note: '负责内容：展会主视觉、空间导视系统、参展物料设计、互动区视觉。',
     date: '2024',
-    thumb: 'assets/placeholder-4.svg'
+    thumb: 'assets/work/p4/cover.webp',
+    gallery: [
+      'assets/work/p4/01.webp',
+      'assets/work/p4/02.webp',
+      'assets/work/p4/03.webp'
+    ]
   },
   5: {
     title: '品牌周边衍生品设计',
@@ -141,7 +171,12 @@ const projects = {
     tags: '周边设计, 衍生品, 品牌延展, 工艺打样',
     note: '负责内容：周边产品规划、视觉设计、材质选型、工艺打样跟进。',
     date: '2024',
-    thumb: 'assets/placeholder-5.svg'
+    thumb: 'assets/work/p5/cover.webp',
+    gallery: [
+      'assets/work/p5/01.webp',
+      'assets/work/p5/02.webp',
+      'assets/work/p5/03.webp'
+    ]
   },
   6: {
     title: '老碗会非遗技艺面食视觉',
@@ -153,9 +188,41 @@ const projects = {
     tags: '非遗技艺, 品牌传播, 文化视觉, 现代演绎',
     note: '负责内容：传播主视觉、系列海报、品牌文化物料设计。',
     date: '2023',
-    thumb: 'assets/placeholder-6.svg'
+    thumb: 'assets/work/p6/cover.webp',
+    gallery: [
+      'assets/work/p6/01.webp',
+      'assets/work/p6/02.webp',
+      'assets/work/p6/03.webp',
+      'assets/work/p6/04.webp'
+    ]
   }
 };
+
+const BASE_URL = 'https://arhgan.github.io/portfolio/';
+
+function setMeta(attr, key, value) {
+  let el = document.querySelector(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', value);
+}
+
+function setPageMeta({ title, desc, image, url }) {
+  document.title = title;
+  setMeta('name', 'description', desc);
+  setMeta('property', 'og:title', title);
+  setMeta('property', 'og:description', desc);
+  setMeta('property', 'og:url', url);
+  setMeta('property', 'og:image', image);
+  setMeta('name', 'twitter:title', title);
+  setMeta('name', 'twitter:description', desc);
+  setMeta('name', 'twitter:image', image);
+  const canon = document.getElementById('canonicalLink');
+  if (canon) canon.href = url;
+}
 
 function getParam(name) {
   const url = new URL(window.location.href);
@@ -168,7 +235,12 @@ function renderProject() {
   const nextId = (parseInt(id) % 6) + 1;
   const nextP = projects[nextId];
 
-  document.title = `${p.title} — Zephyr Arh`;
+  setPageMeta({
+    title: `${p.title} — Zephyr Arh`,
+    desc: p.desc.slice(0, 110),
+    image: BASE_URL + p.thumb,
+    url: `${BASE_URL}project-detail.html?id=${id}`
+  });
 
   document.getElementById('crumbCat').textContent = p.cat;
   document.getElementById('crumbTitle').textContent = p.title;
@@ -183,12 +255,71 @@ function renderProject() {
   document.getElementById('infoNote').textContent = p.note;
   document.getElementById('detailDate').textContent = p.date;
   document.getElementById('detailThumb').src = p.thumb;
+  document.getElementById('detailThumb').alt = `${p.title} 封面`;
+  document.getElementById('detailThumb').removeAttribute('width');
+  document.getElementById('detailThumb').removeAttribute('height');
+  renderGallery(p);
   document.getElementById('nextLink').href = `project-detail.html?id=${nextId}`;
   document.getElementById('nextTitle').textContent = `${nextP.title} →`;
 }
 
+// --- Gallery + Lightbox ---
+let galleryItems = [];
+let galleryIndex = 0;
+
+function renderGallery(p) {
+  const box = document.getElementById('gallery');
+  if (!box) return;
+  galleryItems = p.gallery || [];
+  box.innerHTML = galleryItems.map((src, i) => `
+    <button class="gallery-item" type="button" data-index="${i}" aria-label="查看第 ${i + 1} 张图片">
+      <img src="${src}" alt="${p.title} — 作品图 ${i + 1}" loading="lazy" decoding="async">
+    </button>`).join('');
+
+  box.querySelectorAll('.gallery-item').forEach((btn) => {
+    btn.addEventListener('click', () => openLightbox(Number(btn.dataset.index)));
+  });
+}
+
+function openLightbox(i) {
+  if (!galleryItems.length) return;
+  galleryIndex = (i + galleryItems.length) % galleryItems.length;
+  const lb = document.getElementById('lightbox');
+  const content = document.getElementById('lightboxContent');
+  const counter = document.getElementById('lightboxCounter');
+  content.innerHTML = `<img src="${galleryItems[galleryIndex]}" alt="">`;
+  counter.textContent = `${galleryIndex + 1} / ${galleryItems.length}`;
+  lb.classList.add('open');
+  lb.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('open');
+  lb.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderProject();
+
+  const lb = document.getElementById('lightbox');
+  if (lb) {
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click', () => openLightbox(galleryIndex - 1));
+    document.getElementById('lightboxNext').addEventListener('click', () => openLightbox(galleryIndex + 1));
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') openLightbox(galleryIndex - 1);
+      if (e.key === 'ArrowRight') openLightbox(galleryIndex + 1);
+    });
+  }
+
 
   // --- Mobile: Menu button toggles portfolio panel ---
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -214,3 +345,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+/* 复制到剪贴板（微信 / 小红书号） */
+(() => {
+  const items = document.querySelectorAll('[data-copy]');
+  if (!items.length) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'copy-toast-global';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
+  document.body.appendChild(toast);
+  let timer = null;
+
+  const flash = (msg) => {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(() => toast.classList.remove('show'), 1800);
+  };
+
+  const copy = async (text) => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+  };
+
+  items.forEach((el) => {
+    el.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const text = el.dataset.copy;
+      try {
+        await copy(text);
+        flash(`已复制 ${text}`);
+      } catch {
+        flash('复制失败，请手动选择');
+      }
+    });
+  });
+})();

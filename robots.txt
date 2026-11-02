@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_drafts/
+
+Sitemap: https://arhgan.github.io/portfolio/sitemap.xml

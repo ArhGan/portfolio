@@ -65,15 +65,16 @@ const articles = {
     date: '2025.09.01',
     reading: '6 min read',
     tags: ['品牌出海', '香港市场', '双语设计', '视觉策略'],
-    heroImg: 'assets/placeholder-1.svg',
-    heroCaption: '老碗会香港首店品牌视觉物料',
+    heroImg: 'assets/work/p1/cover.webp',
+    heroCaption: '老碗会香港首店开幕海报',
     body: [
       { type: 'p', text: '香港，作为许多品牌的出海第一站。我与老碗会的海外之旅从这里作为起点，从项目立项到新店开业，这是一个全新的挑战。作为国际化的大城市，香港有太多内容与大陆不同——全新的内容设计，全新的文化表达，全新的品牌传播。' },
       { type: 'h2', text: '传承品牌基因' },
       { type: 'p', text: '保留老碗会"西北风味+烟火气"的核心视觉元素，延续标志性色彩与图形符号，强化品牌辨识度。在异国他乡，品牌基因是消费者认知的锚点，也是品牌信任感的基础。' },
       { type: 'h2', text: '适配本地市场' },
       { type: 'p', text: '兼顾香港中西融合的文化特点，采用双语（中文+英文）设计体系。调整视觉节奏以适配香港门店空间布局与传播场景。香港消费者对视觉信息密度和排版层级有自己的偏好，需要在保留品牌调性的同时做本地化适配。' },
-      { type: 'figure', img: 'assets/placeholder-2.svg', caption: '双语设计体系示意：中英文并置排版' },
+      { type: 'figure', img: 'assets/work/p1/01.webp', caption: '香港首店系列海报：城市意象与品牌符号的并置' },
+      { type: 'figure', img: 'assets/work/p1/06.webp', caption: '香港门店菜单内容设计：品牌故事菜单与时间限定套餐' },
       { type: 'h3', text: '具体物料清单' },
       { type: 'ul', items: ['宣传单页：双语排版，突出品牌故事与开业信息', '外立面围挡：大面积品牌视觉，吸引行人注意', '桌面产品贴：细节物料，增强用餐体验', '户外异形立牌：异形切割，增强视觉记忆点', '扫码点单桌贴：功能性物料，兼顾美观与实用', '菜单设计：品牌故事菜单与时间限定类套餐菜单'] },
       { type: 'h2', text: '保障合规落地' },
@@ -90,8 +91,8 @@ const articles = {
     date: '2025.06.15',
     reading: '8 min read',
     tags: ['品牌视觉', 'VI系统', '餐饮品牌', '设计流程'],
-    heroImg: 'assets/placeholder-2.svg',
-    heroCaption: '品牌视觉体系构建流程图',
+    heroImg: 'assets/work/p1/08.webp',
+    heroCaption: '品牌视觉在门店空间中的落地',
     body: [
       { type: 'p', text: '5年视觉设计师经验沉淀，3年品牌设计经验。我主导过全案品牌设计，VI、VIS、商业插画、产品拍摄、大型会展设计等多项类型涉及项目，能独立完成设计项目落地。这篇文章分享我从0到1构建品牌视觉体系的方法论。' },
       { type: 'h2', text: '什么是全案品牌设计' },
@@ -100,7 +101,7 @@ const articles = {
       { type: 'ul', items: ['品牌标志设计（Logo）', '色彩体系（主色、辅助色、色彩规范）', '字体系统（中英文规范）', '辅助图形开发', '应用物料设计（名片、信封、包装等）', '空间视觉导示系统'] },
       { type: 'h2', text: '构建流程' },
       { type: 'p', text: '我的流程分为四个阶段：调研分析、概念发想、系统构建、落地执行。每个阶段都有明确的交付物和评审节点。' },
-      { type: 'figure', img: 'assets/placeholder-3.svg', caption: '品牌视觉体系四阶段流程' },
+      { type: 'figure', img: 'assets/work/p1/08.webp', caption: '香港门店招牌与空间中的视觉落地' },
       { type: 'h2', text: '对设计趋势的敏感度' },
       { type: 'p', text: '擅长从0到1构建品牌视觉，并跟进上线制作，对设计趋势敏感，具备独特的创意视角、设计风格、配色技巧。趋势敏感不是追逐潮流，而是在趋势中找到适合品牌的表达方式。' },
       { type: 'h2', text: '团队协作与新人培养' },
@@ -115,20 +116,20 @@ const articles = {
     date: '2025.03.20',
     reading: '5 min read',
     tags: ['扑湘', '湖南风味', '色彩体系', '辅助图形'],
-    heroImg: 'assets/placeholder-3.svg',
-    heroCaption: '扑湘品牌色彩体系与辅助图形',
+    heroImg: 'assets/work/p2/cover.webp',
+    heroCaption: '扑湘品牌主视觉',
     body: [
       { type: 'p', text: '扑湘，"扑"体现直奔而来的热情渴望与动作感，"湘"指代湖南核心风味。整体传递直奔地道湖南风味的活力和爽快感，兼具生活气息与现代感。' },
       { type: 'h2', text: '品牌定位' },
       { type: 'p', text: '以鲜活湖南乡野菜为载体，讲好地道湖南风味故事，营造热闹亲切、活力四射的用餐氛围，坚持食材新鲜地道，还原湘味本真。' },
       { type: 'h2', text: '色彩体系：取自湖南乡野' },
       { type: 'p', text: '色彩取自湖南乡野的自然色彩：青山绿野（Green Mountains and Fields）、湘辣红（Xiang La Hong）、大地灰（Earthash）。每个色彩都有对应的 Pantone 色号和 CMYK/RGB 值，确保跨媒介一致性。' },
-      { type: 'figure', img: 'assets/placeholder-4.svg', caption: '色彩体系：青山绿野、湘辣红、大地灰' },
+      { type: 'figure', img: 'assets/work/p2/03.webp', caption: '色彩体系：青山绿野、湘辣红、大地灰' },
       { type: 'h3', text: '色彩规范' },
       { type: 'ul', items: ['青山绿野 PANTONE 19-5918 TCX — R:46 G:57 B:41', '大地灰 PANTONE P42-8C — R:118 G:45 B:28', '辅助色：湘辣红 — 用于点缀与强调'] },
       { type: 'h2', text: '辅助图形：乡土元素的几何化' },
       { type: 'p', text: '辅助图形源自湖南乡土元素——木纹、叶纹、叶枝——的现代几何化演绎。将自然纹理抽象为几何图形，既保留了乡土的温度，又具备了现代设计的秩序感。' },
-      { type: 'figure', img: 'assets/placeholder-5.svg', caption: '辅助图形：木纹与叶纹的几何化演绎' },
+      { type: 'figure', img: 'assets/work/p2/04.webp', caption: '辅助图形：木纹、叶纹、叶枝的几何化演绎' },
       { type: 'h2', text: '物料延展' },
       { type: 'p', text: '从杯垫、名片到餐巾纸盒、打包盒、手提袋、发票、胶带，全套物料均延续品牌视觉语言，让品牌体验贯穿消费者接触的每一个触点。' },
       { type: 'quote', text: '烟火气不是粗粝，是对生活温度的视觉化表达。' }
@@ -141,15 +142,15 @@ const articles = {
     date: '2024.12.10',
     reading: '6 min read',
     tags: ['非遗技艺', '品牌传播', '文化视觉', '面食'],
-    heroImg: 'assets/placeholder-4.svg',
-    heroCaption: '老碗会非遗技艺面食视觉设计',
+    heroImg: 'assets/work/p6/cover.webp',
+    heroCaption: '老碗会非遗技艺主题巴士车身',
     body: [
       { type: 'p', text: '老碗会非遗技艺面食视觉设计。以"吃面就吃老碗会"为核心传播口号，将传统非遗面食技艺通过现代视觉语言重新演绎。' },
       { type: 'h2', text: '非遗技艺与品牌传播' },
       { type: 'p', text: '非遗技艺是品牌文化厚度的重要载体。通过对非遗技艺的视觉化呈现，增强品牌文化底蕴，提升消费者对品牌"传承与创新"的认知。' },
       { type: 'h2', text: '设计思路' },
       { type: 'p', text: '设计融合传统面食制作工艺的图形元素与老碗会品牌标识，打造既有文化底蕴又具现代传播力的视觉系统。"吃面就吃老碗会"这一口号将非遗技艺与品牌记忆深度绑定。' },
-      { type: 'figure', img: 'assets/placeholder-6.svg', caption: '非遗技艺面食系列视觉物料' },
+      { type: 'figure', img: 'assets/work/p6/01.webp', caption: '非遗技艺主题双层巴士车身设计' },
       { type: 'h3', text: '视觉要点' },
       { type: 'ul', items: ['传统工艺图形元素的提取与再设计', '品牌标识与非遗元素的融合', '现代排版与传统文化内容的平衡', '系列海报的视觉节奏控制'] },
       { type: 'h2', text: '现代演绎的边界' },
@@ -194,13 +195,44 @@ function renderArticleBody(article) {
   }).join('');
 }
 
+const BASE_URL = 'https://arhgan.github.io/portfolio/';
+
+function setMeta(attr, key, value) {
+  let el = document.querySelector(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', value);
+}
+
+function setPageMeta({ title, desc, image, url }) {
+  document.title = title;
+  setMeta('name', 'description', desc);
+  setMeta('property', 'og:title', title);
+  setMeta('property', 'og:description', desc);
+  setMeta('property', 'og:url', url);
+  setMeta('property', 'og:image', image);
+  setMeta('name', 'twitter:title', title);
+  setMeta('name', 'twitter:description', desc);
+  setMeta('name', 'twitter:image', image);
+  const canon = document.getElementById('canonicalLink');
+  if (canon) canon.href = url;
+}
+
 function renderArticle() {
   const id = getParam('id') || '1';
   const a = articles[id] || articles[1];
   const nextId = (parseInt(id) % 4) + 1;
   const nextA = articles[nextId];
 
-  document.title = `${a.title} — Zephyr Arh`;
+  setPageMeta({
+    title: `${a.title} — Zephyr Arh`,
+    desc: (a.excerpt || a.meta || a.title).slice(0, 110),
+    image: BASE_URL + (a.heroImg || 'assets/og-cover.png'),
+    url: `${BASE_URL}article-detail.html?id=${id}`
+  });
 
   // Breadcrumb
   document.getElementById('crumbTitle').textContent = a.title;
@@ -256,24 +288,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Share link handling
-  document.querySelectorAll('.share-link').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const type = link.dataset.share;
-      const url = window.location.href;
-      const title = document.getElementById('articleTitle').textContent;
+  // Share links: 微博 / X 用真实分享地址，复制链接单独处理
+  const shareUrl = encodeURIComponent(window.location.href);
+  const shareTitle = encodeURIComponent(document.title);
 
-      if (type === 'twitter') {
-        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
-      } else if (type === 'linkedin') {
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
-      } else if (type === 'copy') {
-        navigator.clipboard.writeText(url).then(() => {
-          link.textContent = 'Copied!';
-          setTimeout(() => { link.textContent = 'Copy Link'; }, 2000);
-        });
+  const weibo = document.querySelector('.share-link[data-share="weibo"]');
+  if (weibo) weibo.href = `https://service.weibo.com/share/share.php?url=${shareUrl}&title=${shareTitle}`;
+
+  const toX = document.querySelector('.share-link[data-share="x"]');
+  if (toX) toX.href = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`;
+
+  const copyBtn = document.querySelector('.share-link[data-share="copy"]');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyBtn.textContent = '已复制';
+        setTimeout(() => { copyBtn.textContent = '复制链接'; }, 1800);
+      } catch {
+        copyBtn.textContent = '请手动复制';
+      }
+    });
+  }
+});
+
+/* 复制到剪贴板（微信 / 小红书号） */
+(() => {
+  const items = document.querySelectorAll('[data-copy]');
+  if (!items.length) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'copy-toast-global';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
+  document.body.appendChild(toast);
+  let timer = null;
+
+  const flash = (msg) => {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(() => toast.classList.remove('show'), 1800);
+  };
+
+  const copy = async (text) => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+  };
+
+  items.forEach((el) => {
+    el.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const text = el.dataset.copy;
+      try {
+        await copy(text);
+        flash(`已复制 ${text}`);
+      } catch {
+        flash('复制失败，请手动选择');
       }
     });
   });
-});
+})();

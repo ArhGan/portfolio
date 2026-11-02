@@ -216,3 +216,34 @@ JS 不报错（`node --check` 通过），但 35 张画廊图全部指向不存�
 - **p4 标题写「PALATABLE 展会活动视觉」**，但画册里的展会是徽菜年货节（奋斗成就自我）与老碗会十年，
   与扑湘无关。图片已按实际展会重建，标题未动。
 - **p5 文案写「扑湘品牌周边衍生品」**，实际周边是「首席馍馍小厨」IP 与老碗会团扇、纸袋、礼盒。
+
+---
+
+## 第四阶段：上线前审计（2026-11-02）
+
+### 1. 详情页还留着一整套模板
+`project-detail.html` 与 `article-detail.html` 的侧边栏三块面板从未改过，会是用户一悬停就看见的东西：
+
+- **Contact**：`mailto:hello@yourname.com`，以及 GitHub / Dribbble / Behance / LinkedIn 四个 `href="#"`
+- **Experience**：`Creative Developer — Freelance`、`UI/UX Designer — Studio X`、`Motion Media Intern — Agency Y`
+- **Articles**：四条链接全部指向 `index.html#articles`，标题也是缩写版
+
+已按首页的真实数据重写：Pinterest / GitHub / 小红书（复制）/ 微信（复制）/ 电话；
+四段真实经历（余百年、老碗会、蜜雪冰城、丞诚科技）；文章直连 `article-detail.html?id=N`。
+两份详情页 JS 补上了 `[data-copy]` 处理与 toast。
+
+### 2. 详情页缺 head
+只有 charset / viewport / title，没有 description、没有 og、没有 favicon、没有 canonical。
+已补全，并在 `renderProject()` / `renderArticle()` 里动态改写 title、description、og:image 与 canonical，
+分享到微信/微博时能带对封面。
+
+### 3. 其它
+- 版权年份：文章页 `© 2025`、项目页 `© 2024` → 统一 `© 2026`
+- 分享区：`Twitter / LinkedIn / Copy Link`（前两个是 `#`）→ 复制链接 / 分享到微博 / 分享到 X，且写入真实分享地址
+- 删掉两段死样式：`.video-placeholder`（视频块早删了）、`.qr-placeholder`（改成账号文字后遗留）
+- 资源版本号统一 `?v=5`
+
+### 4. 上线
+本地已 commit（`19c5b2c`），父提交是远程 `3be2222`，历史没有被覆盖。
+**推送未成功**：本机出网走 127.0.0.1:60748 代理，只放行 GET，`git push` 的 CONNECT 被 502 拦掉；
+环境内也没有 GitHub 凭据。需要在普通终端里执行一次 `git push`。

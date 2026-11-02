@@ -247,3 +247,44 @@ JS 不报错（`node --check` 通过），但 35 张画廊图全部指向不存�
 本地已 commit（`19c5b2c`），父提交是远程 `3be2222`，历史没有被覆盖。
 **推送未成功**：本机出网走 127.0.0.1:60748 代理，只放行 GET，`git push` 的 CONNECT 被 502 拦掉；
 环境内也没有 GitHub 凭据。需要在普通终端里执行一次 `git push`。
+
+---
+
+## 第五阶段：上线（2026-11-02）
+
+### 1. 推送过程
+上一轮判断「代理只放行 GET」是错的——当时那次 502 是瞬时故障。
+实测 `https://github.com/arhgan/portfolio.git/info/refs?service=git-receive-pack` 返回 **401**（可达，仅缺认证），
+说明 CONNECT 隧道本身没问题。
+
+认证走了 Git Credential Manager 2.9.0：
+
+```bash
+git config --global credential.helper manager
+git config --global credential.https://github.com.provider github
+git config --global credential.https://github.com.gitHubAuthModes browser
+```
+
+凭据从 Windows 凭据库直接取到（账号 `ArhGan`），浏览器授权页未弹出即完成，无需交互。
+
+### 2. 结果
+
+```
+3be2222..7309631  main -> main
+```
+
+远程 `refs/heads/main` = `7309631`，与本地一致，工作区干净。
+远程提示仓库地址规范大小写为 `https://github.com/ArhGan/portfolio.git`，remote 已同步更新。
+
+### 3. 线上验证（GitHub Pages）
+
+| 检查项 | 结果 |
+|---|---|
+| 首页体积 | 165,296 B → **32,981 B** |
+| 编辑器注入残留 | 8 处 → **0** |
+| 作品图引用 | 已指向 `assets/work/p1/cover.webp` 等 |
+| 资源版本号 | `?v=5` 生效 |
+| 404 | 未知路径返回 404 状态 + 自定义页 |
+| 15 项关键资源 | 全部 200 |
+
+favicon / og-cover / 字体子集 / sitemap / robots 均可访问。
